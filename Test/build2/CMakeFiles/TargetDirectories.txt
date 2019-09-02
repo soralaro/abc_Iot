@@ -1,0 +1,3 @@
+/home/czx/work/Hi3516/IoT/IoTSample/Test/build2/CMakeFiles/rebuild_cache.dir
+/home/czx/work/Hi3516/IoT/IoTSample/Test/build2/CMakeFiles/IoTSample.dir
+/home/czx/work/Hi3516/IoT/IoTSample/Test/build2/CMakeFiles/edit_cache.dir
