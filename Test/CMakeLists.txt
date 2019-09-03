@@ -1,5 +1,3 @@
-# IoTClient Sample
-project(IoTSample)
 cmake_minimum_required(VERSION 2.6)
 
 include_directories(
@@ -15,7 +13,7 @@ include_directories(
     )
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} IoT_SRC)
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/../IoTClient IoT_SRC)
+#aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/../IoTClient IoT_SRC)
 
 #find_library(LIBMQTT3C NAMES libpaho-mqtt3cs-static.a PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/paho_mqtt/lib/arm-himix200-linux)
 find_library(LIBMQTT3C NAMES libpaho-mqtt3c.a PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/paho_mqtt/lib/x86_64)
@@ -24,7 +22,7 @@ find_library(LIBJSONCPP NAMES libjsoncpp.a PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../
 #find_library(LIBSSL NAMES libssl.so PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/openssl/lib/arm-himix200-linux)
 #find_library(LIBCRYPTO NAMES libcrypto.so PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/openssl/lib/arm-himix200-linux)
 find_library(LIBGLOG NAMES libglog.a PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/glog/lib/x86_64)
-
+link_directories(${PROJECT_SOURCE_DIR}/build/sdkApi)
 # add_library(IoTClient STATIC ${IoT_SRC})
 add_executable(IoTSample ${IoT_SRC})
 
@@ -33,9 +31,12 @@ target_link_libraries(
 
 #    ${LIBCRYPTO}
 #    ${LIBSSL}
+    -lDGIoTSDK
     ${LIBMQTT3C}
     ${LIBJSONCPP}
+
     ${LIBGLOG}
+
     -lpthread
     -lgflags
 )

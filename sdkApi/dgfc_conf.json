@@ -1,0 +1,47 @@
+{
+   "FacecapCfg" : {
+      "Angles" : [ 45, 60, 60 ],
+      "CapStrategy" : "fine",
+      "ConfThrd" : 60,
+      "EnableAngles" : true,
+      "MinFaceWidth" : 50,
+      "OutputNum" : 1,
+      "Quality" : 20,
+      "RoiSet" : {
+         "PointNum" : 0
+      },
+      "TrackSec" : 3
+   },
+   "FtpCfg" : {
+      "Password" : "123456",
+      "Path" : "facecap",
+      "Port" : 21,
+      "Prefix" : "",
+      "Server" : "192.168.1.100",
+      "User" : "user"
+   },
+   "IotCfg" : {
+      "Password" : "mint!@#$",
+      "Port" : 1883,
+      "Server" : "dgiot2.nemoface.com",
+      "Topic" : "mint",
+      "User" : "mint"
+   },
+   "SnapCfg" : {
+      "FaceImgCompress" : "medium",
+      "FaceImgSize" : 208,
+      "SceneImgCompress" : "medium",
+      "SceneImgEnable" : false,
+      "SceneImgHeight" : 1080
+   },
+   "TransPolicy" : "ufile",
+   "UfileCfg" : {
+      "UCloudBucket" : "dgtest",
+      "UCloudBucket2" : "dgtest2",
+      "UCloudCallbackURL" : "http://importer.test.nemoface.com/notify",
+      "UCloudHostURL" : "cn-bj.ufileos.com",
+      "UCloudPrivateKey" : "72f5d81fc12f6d430db448e4822a73a3c3588b9e",
+      "UCloudPublicKey" : "GMFH/zKXUQRsdbdcaFSmqECSPgbQUp+29vu4RizqcHWFY2Q2e7k/GA=="
+   }
+}
+

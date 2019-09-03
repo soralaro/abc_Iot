@@ -330,8 +330,14 @@ void CIoTClientListener::IoTUpChInfo(){}
 bool CIoTClientListener::HasConfigHash(){return false;}
 void CIoTClientListener::IoTUpDevConfigHash(){}
 void CIoTClientListener::IoTUpDevConfigContent(){}
-void CIoTClientListener::SaveConfigHash(Json::Value& hash){}
-void CIoTClientListener::SaveConfigContent(Json::Value& content){}
+void CIoTClientListener::SaveConfigHash(Json::Value& hash)
+{
+    DLOG(INFO) << "CIoTClientListener::SaveConfigHash" << std::endl;
+}
+void CIoTClientListener::SaveConfigContent(Json::Value& content)
+{
+    DLOG(INFO) << "CIoTClientListener::SaveConfigContent" << std::endl;
+}
 
 //IoT Msg Recv
 void CIoTClientListener::onOTATrig(Json::Value& iotMessage){}
