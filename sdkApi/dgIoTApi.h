@@ -55,4 +55,5 @@ typedef INT32_t (*DGSDK_Callback)(SDK_MESSAGE_TYPE_EM aType, SDK_CALLBACK_MESSAG
 
 
 INT32_t  DGSDK_login(SDK_DEVICE_INFO device, DGSDK_Callback callback, void*pUser,const char *config_json_file);
+void   DGSDK_logout();
 #endif //DGIOTSDK_DGIOTAPI_H

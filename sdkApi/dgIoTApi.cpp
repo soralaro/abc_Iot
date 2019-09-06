@@ -30,11 +30,17 @@ public:
     //IoT连接状态
     void onIoTConnected();
     void onIoTDisConnected();
+
+    std::string deviceID;
+    const std::string devmodel="DC31-";//”DGSDK";
+    const std::string SDK_VERSION = "1.0.0";
+    std::string deviceIP ;
+
 };
 FGWare2::CIoTClient *g_IoTClient = nullptr;
 MyIoTClientListener *g_IoTListener = nullptr;
-static std::string deviceID = "test123465";
 static const std::string ssl_path = "./testssl.crt";
+
 static FGWare2::IOT_SERVER Server;
 
 
@@ -70,17 +76,17 @@ void MyIoTClientListener::IoTUpDevInfo()
     // device name
     jsonItem["devicename"] = "DGSDK测试";
     // device model
-    jsonItem["devmodel"] = "DGSDK";
+    jsonItem["devmodel"] =devmodel;
     // app name
     jsonItem["appname"] = "AppName";
     // app version
-    jsonItem["appver"] = "AppVersion";
+    jsonItem["appver"] = SDK_VERSION;
     // os name
     jsonItem["osname"] = "OsName";
     // os version
     jsonItem["osver"] = "OsVersion";
     // device ip
-    jsonItem["deviceip"] = "DeviceIP";
+    jsonItem["deviceip"] = deviceIP;
     // iot protocol version
     jsonItem["protover"] = 2;
     // 应用版本
@@ -187,6 +193,17 @@ INT32_t  DGSDK_login(SDK_DEVICE_INFO device, DGSDK_Callback callback, void*pUser
     //  * create normal iot client
     //  */
     g_IoTListener = new MyIoTClientListener();
+    g_IoTListener->deviceID=device.serial;
+    g_IoTListener->deviceIP=device.lan_ip;
     g_IoTClient = new FGWare2::CIoTClient(deviceID, Server, g_IoTListener);
     g_IoTClient->Run();
+}
+
+void   DGSDK_logout()
+{
+    g_IoTClient->Stop();
+    delete g_IoTListener;
+    g_IoTListener= nullptr;
+    delete g_IoTClient;
+    g_IoTClient= nullptr;
 }

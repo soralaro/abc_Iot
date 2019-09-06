@@ -1,0 +1,21 @@
+{
+  "msg_type" : 12,
+  "config" : {
+    "TransPolicy" : "ftp",
+    "FtpCfg" : {
+      "OrigEnable" : 1,
+      "Password" : "deepglint",
+      "Port" : 2141,
+      "RemoteDir" : "test123465-20:35",
+      "Server" : "211.159.163.69",
+      "User" : "deepglint",
+      "WithUid" : 0
+    },
+    "TransCfg" : {
+      "OrigEnable" : 0,
+      "OrigScaleDen" : 1,
+      "OrigScaleNum" : 1
+    }
+  },
+  "config_hash" : "624c38d3824ddc75"
+}
