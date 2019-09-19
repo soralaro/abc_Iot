@@ -143,7 +143,7 @@ INT32_t  DGSDK_login(SDK_DEVICE_INFO device, DGSDK_Callback callback, void*pUser
     Json::Reader json_reader;
     Json::Value json_value;
 
-   // const char* str="{\"server\":\"tcp://123.59.135.181:1883\"}";
+   // const char* str="{\"server\":\"tcp://xxx.xxx.xxx.xxx:xxxx\"}";
     if (!json_reader.parse(json_file, json_value))
     {
         LOG(ERROR) <<"config_json_file: "<< config_json_file <<" faile to parse!"<<std::endl;

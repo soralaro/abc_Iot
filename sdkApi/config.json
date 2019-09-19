@@ -1,5 +1,5 @@
 {
-   "server": "tcp://123.59.135.181:1883",
+   "server": "tcp://127.0.0.1:8000",
    "user": "dfcdn",
     "passwd": "dfcdn123",
     "topic_uplink": "topic/dfcdn"
